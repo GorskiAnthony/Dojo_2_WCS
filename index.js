@@ -19,6 +19,42 @@
     ]
  */
 
+/** Cycle de 3min
+ * Basile -> Guillaume -> Olivier -> Sébastien -> Valérie -> Basile -> ...
+ *
+ *
+ * */
 
 /** Votre code 👇 */
 
+let echequier = [];
+let lettres = ["a", "b", "c", "d", "e", "f", "g", "h"];
+let chiffres = [1, 2, 3, 4, 5, 6, 7, 8];
+let lignes = [];
+let string = "";
+
+function makeLine() {
+	// A quoi sert cette boucle ? Bas écris xD
+	for (let i = 0; i < lettres.length; i++) {
+		for (let j = 0; j < chiffres.length; j++) {
+			lignes.push(lettres[i] + " - " + chiffres[j]);
+		}
+		echequier.push(lignes);
+		lignes = [];
+	}
+	return echequier;
+}
+
+// function makeLine2() {
+// 	// A quoi sert cette boucle ? Bas écris xD
+// 	//
+// 	for (let i = 0; i < lettres.length; i++) {
+// 		for (let j = 0; j < chiffres.length; j++) {
+// 			echequier[i][j] = lettres[i] + " - " + chiffres[j];
+// 			// string = " - " + chiffres[j];
+// 		}
+// 	}
+// 	return echequier;
+// }
+
+console.log(makeLine());
